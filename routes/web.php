@@ -8,9 +8,9 @@ use App\Http\Controllers\ProductController;
 
 
 
-Route::get('/', [IndexController::class, 'index']);
-Route::get('/product',[ProductController::class, 'show']);
+Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('/product/{product}',[ProductController::class, 'show'])->name('product');
 
-Route::get('/admin/product', [AdminProductController::class, 'index']);
-Route::get('/admin/product/edit', [AdminProductController::class, 'edit']);
+Route::get('/admin/product', [AdminProductController::class, 'index'])->name('admin.product');
+Route::get('/admin/product/edit', [AdminProductController::class, 'edit'])->name('admin.product.edit');
 
